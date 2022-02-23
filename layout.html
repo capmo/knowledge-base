@@ -1,0 +1,87 @@
+{{ header }}
+<div class="contact_us" style="display:none;">
+    <h2>Kontaktieren Sie Capmo</h2>
+    <div class="contact_details">
+      <img src="https://drive.google.com/uc?id=1neTYBtDKmJMWsHpMqKSQtIlnVJQe9YEv" class="contact_img">
+      <div>
+        <p><b>Sie brauchen Hilfe?</b> Kontaktieren Sie unser <b>Support Team.</b> </p>
+        <p>Wir helfen Ihnen gerne. </p>
+        <p><img src="https://drive.google.com/uc?id=1Yinzoaahw6xCeqtLi1qC9d6jiZd9j2gI" class="phone_icon"><a href="tel:+498921540420" class="phone_no">+498921540420</a></p>
+        <p><img src="https://drive.google.com/uc?id=1xv0mQmifu8I24B2lHpN8KPiEbv6DtMbi" class="phone_icon"><a href="mailto:service@capmo.de" class="phone_no">service@capmo.de</a></p>
+      </div>
+    </div>
+</div>
+<div class="static_div page" style="display:none;">
+<div class="down_hero_div2">
+  <div class="featured_articles">
+    <h1>Die hilfreichsten Artikel</h1>
+    {% for category in portal.solution_categories %}
+	{% for folder in category.folders %}
+		{% if folder.id == 44001227517 %}
+			{% for article in folder.articles limit:6 %}
+    <a href="{{article.url}}" class="featured_article">{{article.title}}<img class="homepage_arrow_right arrow_right" src="https://drive.google.com/uc?id=1HpU6D4SHTY3bcuFp8rAF2GAGQWNixYwT"></a>
+			{% endfor %}
+		{% endif %}
+	{% endfor %}
+{% endfor %}
+</div>
+</div>
+</div>
+
+<div class="page0">
+<div class="page">
+  
+  
+	<!-- Search and page links for the page -->
+	{% if portal.current_tab and portal.current_tab == "home" %}
+		<!--<section class="help-center rounded-6">	
+			<div class="hc-search">
+				<div class="hc-search-c">
+					<h2 class="heading hide-in-mobile">{% translate header.help_center %}</h2>
+					{% snippet search_form %}
+				</div>
+			</div>
+			<div class="hc-nav {% if portal.contact_info %} nav-with-contact {% endif %}">				
+				{{ portal | helpcenter_navigation }}
+			</div>
+		</section>-->
+	{% endif %}
+
+	<!-- Notification Messages -->
+	{{ page_message }}
+
+	{% if portal.current_page != "user_signup" and portal.current_page != "submit_ticket" %}
+	<div class="c-wrapper">		
+		{{ content_for_layout }}
+	</div>
+	{% elsif portal.current_page == "submit_ticket" %}
+	<div class="c-wrapper">		
+		<div class="new_ticket_page">
+		{{ content_for_layout }}
+		</div>
+	</div>
+	{% else %}
+	<div class="signup-page">
+	<div class="signup-wrapper">
+	{{ content_for_layout }}
+	</div>
+	</div>
+	{% endif %}
+
+	
+  </div>
+</div>
+{{ footer }}
+<script>
+  var top_url = window.location.href;
+  if(top_url.indexOf("/support/home") > 0){
+  jQuery(".static_div").css("display","block");
+    jQuery(".contact_us").css("display","block");
+    jQuery("header").css("margin-bottom","70px");
+    jQuery(".page0").css({"background":"#F3F8F5","margin-top":"-150px"});
+  }
+  if(top_url.indexOf("/support/solutions/articles") > 0){
+  jQuery(".footer").css("margin-bottom","-25px");
+  }
+  jQuery(".hc-search-input input.special").attr("placeholder","Find anything");
+</script>

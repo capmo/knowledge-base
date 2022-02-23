@@ -1,0 +1,23 @@
+{% if  portal.current_page != 'csat_survey' %}
+	<footer class="footer rounded-6">
+     
+		<nav class="footer-links page no-padding">
+          <div class="footer_bar_first first_navbar banner-title" style="float:left;">
+				<a href="/support/home" class="portal-logo"><span class="portal-img"><i></i>
+                    <img src="https://drive.google.com/uc?id=1SuyJwLSqkU2vdRZ6w5S00ek1EoCiyogz" alt="Logo" onerror="default_image_error(this)" data-type="logo">
+                 </span></a>
+			</div>
+          <div class="footer_bar_second second_navbar banner-nav">
+            <p class="copyright_p"><a href="https://www.capmo.com/de/datenschutz/" style="color:white;">Datenschutz</a> |<a href="https://www.capmo.com/de/impressum/" style="color:white;">Impressum</a> | © 2022 Capmo</p>
+			</div>
+			<!--{% if portal.tabs.size > 0 %}
+					{% for tab in portal.tabs %}
+						<a href="{{tab.url}}" class="{% if tab.tab_type == current_tab %}active{% endif %}">{{ tab.label }}</a>
+					{% endfor %}
+			{% endif %}
+			{{ portal | link_to_privacy_policy }}
+			{{ portal | link_to_cookie_law }}-->
+          <div class="footer_bar_third third_navbar"><img src="https://drive.google.com/uc?id=1Yinzoaahw6xCeqtLi1qC9d6jiZd9j2gI" class="phone_icon"><a href="tel:+498921540420" class="phone_no" style="color:white !important;">+498921540420</a></div>
+		</nav>
+	</footer>
+{% endif %}

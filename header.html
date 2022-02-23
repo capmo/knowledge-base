@@ -1,0 +1,62 @@
+{% if  portal.current_page != 'csat_survey' %}
+	<header class="banner">
+		<div class="banner-wrapper page">
+			<div class="first_navbar banner-title">
+				{{ portal | logo }}
+			</div>
+          <div class="third_navbar">
+            <img src="https://drive.google.com/uc?id=1Yinzoaahw6xCeqtLi1qC9d6jiZd9j2gI" class="phone_icon"><a href="tel:+498921540420" class="phone_no">+498921540420</a>
+            <a href="mailto:service@capmo.de" class="contact_button">Capmo kontaktieren</a>
+          </div>
+			<!--<nav class="banner-nav">
+				{{ portal | welcome_navigation }}
+			</nav>-->
+		</div>
+      {% endif %}
+          <div class="hero" style="background-color: #253232;">
+            <h1>Wie können wir Ihnen heute weiterhelfen?</h1>
+            <div class="hc-search">
+				<div class="hc-search-c">
+					{% snippet search_form %}
+				</div>
+			</div>
+          </div>
+	</header>
+	<!-- <nav class="page-tabs">
+		<div class="page no-padding {% if portal.is_not_login_page %}no-header-tabs{% endif %}">
+			{% if portal.tabs.size > 0 %}
+				<a data-toggle-dom="#header-tabs" href="#" data-animated="true" class="mobile-icon-nav-menu show-in-mobile"></a>
+				<div class="nav-link" id="header-tabs">
+					{% for tab in portal.tabs %}
+						{% if tab.url %}
+							<a href="{{tab.url}}" class="{% if tab.tab_type == portal.current_tab %}active{% endif %}">{{ tab.label }}</a>
+						{% endif %}
+					{% endfor %}
+				</div>
+			{% endif %}
+		</div>
+	</nav>-->
+
+<!-- Search and page links for the page 
+{% if portal.current_tab and portal.current_tab != "home" %}
+	<section class="help-center-sc rounded-6">
+		<div class="page no-padding">
+		<div class="hc-search">
+			<div class="hc-search-c">
+				{% snippet search_form %}
+			</div>
+		</div>
+		<div class="hc-nav {% if portal.contact_info %} nav-with-contact {% endif %}">
+			{{ portal | helpcenter_navigation }}
+		</div>
+		</div>
+	</section>
+{% endif %}-->
+	<!--<header class="banner">
+		<div class="banner-wrapper">
+			<div class="banner-title">
+				{{ portal | logo : true }}
+				<h1 class="ellipsis heading">{{portal.name|h}}</h1>
+			</div>
+		</div>
+	</header>-->

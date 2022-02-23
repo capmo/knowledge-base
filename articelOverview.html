@@ -1,0 +1,74 @@
+<div class="breadcrumb">
+  <h3 style="display: inline-block;"><a href="/support/home">Überblick</a></h3>
+		<!--<h3 style="display: inline-block; margin-right: 10px;">{{ article.category.name | h}}</h3>-->
+  <h3 class="h3_heading" style="display: inline-block;"><a href="{{ article.folder.url}}">{{ article.folder.name | h}}</a></h3>
+      <h2>{{ article.title | h}}</h2>
+	</div>
+<section class="main content rounded-6 min-height-on-desktop fc-article-show" id="article-show-{{ article.id }}">
+	
+	<b class="page-stamp page-stamp-article">
+		<b class="icon-page-article"></b>
+	</b>
+<p>{% translate portal.article.modified_on %} {{ article.modified_on | short_day_with_time }}</p>
+	<h2 class="heading">{{ article.title | h}}
+	 	<a href="javascript:print();"
+            class="solution-print--icon print--remove"
+ 			title="{% translate portal.print_title %}"
+ 			arial-role="link"
+ 			arial-label="{% translate portal.print_title %}"
+ 		>
+			<span class="icon-print"></span>
+			<span class="text-print">{% translate print %}</span>
+ 		</a>
+	</h2>
+	{% if article.personalized_articles? %}
+	<div> {% translate portal.article.created_by %} {{ article.author }} </div> 
+	{% endif %}
+	<hr />
+	{% comment %}
+	<div>
+		{% for tag in article.tags %}
+			<span class="label label-info">{{tag.name | h}}</span>
+		{% endfor %}
+	</div>
+	{% endcomment %}
+
+	<article class="article-body" id="article-body" rel="image-enlarge">
+		{{ article.body }}
+	</article>
+
+	<hr />	
+		{{article | article_attachments}}
+
+  <div class="default_voting" style="display:none;">{{article | article_voting }}</div>
+  <div class="article_voting"></div>
+		
+</section>
+<section class="sidebar content rounded-6 article_page_related fc-related-articles">
+	{{ article | related_articles: 10, 'related_articles' }}
+  
+</section>
+<div class="article_page_contact contact_us">
+    <h2>Brauchen Sie Hilfe?</h2>
+    <div class="contact_details">
+      <img src="https://drive.google.com/uc?id=1neTYBtDKmJMWsHpMqKSQtIlnVJQe9YEv" class="contact_img" style="height:70px;">
+      <div style="margin-left: 20px; width: 55%;">
+        <p><img src="https://drive.google.com/uc?id=1Yinzoaahw6xCeqtLi1qC9d6jiZd9j2gI" class="phone_icon"><a href="tel:+498921540420" class="phone_no">+498921540420</a></p>
+        <p><img src="https://drive.google.com/uc?id=1xv0mQmifu8I24B2lHpN8KPiEbv6DtMbi" class="phone_icon"><a href="mailto:service@capmo.de" class="phone_no">service@capmo.de</a></p>
+      </div>
+    </div>
+</div>
+<script>
+  jQuery("body").css("background-color","white");
+  jQuery("#article-author").css("display","none");
+  var vote_html = jQuery(".article-vote").html();
+  console.log(vote_html.substring(35));
+  var data_user_id = jQuery(".article-vote").attr("data-user-id");
+  var data_article_id = jQuery(".article-vote").attr("data-article-id");
+  var put_html = '<div class="article-vote" id="voting-container" data-user-id="' + data_user_id + '" data-article-id="' + data_article_id + '" data-language="en"><div class="article_vote_heading">Was this article helpful?</div>' + vote_html.substring(35) + '</div>';
+  jQuery(".article_voting").html(put_html);
+  jQuery(".main").addClass("padding_right_main");
+  jQuery(".article-vote .vote-up, .article-vote .vote-down").click(function(){
+    jQuery(".default_voting").show();
+  });
+</script>

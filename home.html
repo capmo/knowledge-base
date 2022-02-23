@@ -1,0 +1,128 @@
+{% if portal.has_solutions %}
+<section class="main content rounded-6 min-height-on-desktop fc-portal-solution-home" id="solutions-index-home">
+	
+		
+		<div class="cs-s">
+          <h3 class="heading">Leitstungsphasen:</h3>
+			<div class="cs-g-c">
+				{% for category in portal.solution_categories %}
+					<section class="cs-g article-list" folder-url="{{category.url}}">
+						<div class="list-lead">
+							<!--{{ folder | link_to_folder_with_count }}-->
+                          
+                          {% if category.id == 44000813487 %}<a class="folder_box" href="/support/solutions/folders/44001224320" title="{{ category.name }}"><p class="folder_heading" id="folder_{{ category.id }}">{{ category.name }}</p><img class="folder_img" src="https://drive.google.com/uc?id=1_8diJaFXxZ52g-tnk5swfa3Wtwdm4oDk"></a>{% endif %}
+                          {% if category.id == 44000813488 %}<a class="folder_box" href="/support/solutions/folders/44001224371" title="{{ category.name }}"><p class="folder_heading" id="folder_{{ category.id }}">{{ category.name }}</p><img class="folder_img" src="https://drive.google.com/uc?id=1SzOHOWp5Jwvntfn5QDRyAeXF_2UvcoEE"></a>{% endif %}
+                          {% if category.id == 44000813489 %}<a class="folder_box" href="/support/solutions/folders/44001224377" title="{{ category.name }}"><p class="folder_heading" id="folder_{{ category.id }}">{{ category.name }}</p><img class="folder_img" src="https://drive.google.com/uc?id=1_5BNDsDcRGec2WEmbkQk0dML6sAlf0uo"></a>{% endif %}
+                          {% if category.id == 44000813490 %}<a class="folder_box" href="/support/solutions/folders/44001224383" title="{{ category.name }}"><p class="folder_heading" id="folder_{{ category.id }}">{{ category.name }}</p><img class="folder_img" src="https://drive.google.com/uc?id=13DJ_8_jv-8wlMeHrLMFgypWMOMeQIuG1"></a>{% endif %}
+                          
+                      </div>
+						<!--{{ folder | article_list:5 }}-->
+					</section>
+				{% endfor %}
+			</div>
+		</div>
+  <div class="cs-s">
+          <h3 class="heading">Funktionen:</h3>
+			<div class="cs-g-c">
+				{% for category in portal.solution_categories %}
+					<section class="cs-g2 cs-g article-list" folder-url="{{category.url}}">
+						<div class="list-lead">
+							<!--{{ folder | link_to_folder_with_count }}-->
+                          
+                            {% if category.id == 44000814546 %}<a class="folder_box" href="/support/solutions/folders/44001227517" title="{{ category.name }}"><p class="folder_heading" id="folder_{{ category.id }}">{{ category.name }}</p><img class="folder_img" src="https://drive.google.com/uc?id=13JMKlM-9c16JVfbeAmFk_A8SYmWbDJwF"></a>{% endif %}
+                            {% if category.id == 44000814547 %}<a class="folder_box" href="/support/solutions/folders/44001227518" title="{{ category.name }}"><p class="folder_heading" id="folder_{{ category.id }}">{{ category.name }}</p><img class="folder_img" src="https://drive.google.com/uc?id=1sjWFKqbbDO6h6nGdvOhG0JeEDkr5T9OT"></a>{% endif %}
+                            {% if category.id == 44000814548 %}<a class="folder_box" href="/support/solutions/folders/44001227519" title="{{ category.name }}"><p class="folder_heading" id="folder_{{ category.id }}">{{ category.name }}</p><img class="folder_img" src="https://drive.google.com/uc?id=1cVMdmFR3O5Q4brZaZf12QKTXgw4sE8XF"></a>{% endif %}
+                            {% if category.id == 44000814549 %}<a class="folder_box" href="/support/solutions/folders/44001227515" title="{{ category.name }}"><p class="folder_heading" id="folder_{{ category.id }}">{{ category.name }}</p><img class="folder_img" src="https://drive.google.com/uc?id=1I-N81pY426HEYXmlLe_GqUthcmNTcFOH"></a>{% endif %}
+                          
+                      </div>
+						<!--{{ folder | article_list:5 }}-->
+					</section>
+				{% endfor %}
+			</div>
+		</div>	
+  
+  <div class="cs-s">
+   <h3 class="heading">Webinare & Events</h3>
+   <div class="cs-g-c">
+     <section class="cs-g article-list webinar_div">
+       <a href="https://fs.hubspotusercontent00.net/hubfs/3973655/Capmo_Webinar_Vorbereitung.mp4"><img src="https://github.com/capmo/knowledge-base/blob/5f37665e1afd0581ad922d7b72496087f76a5660/Knowledge%20Base%20Assets%20(don_t%20touch)/Group-26-1.png"></a>
+         <div class="webinar_text list-lead">
+           <div class="read_more"><a href="https://fs.hubspotusercontent00.net/hubfs/3973655/Capmo_Webinar_Vorbereitung.mp4">Jetzt anschauen (7 min.) <img class="arrow_right" src="https://drive.google.com/uc?id=1M3BZWKVB7BdebGpLXIpLstsRzlHbqNI9"></a></div>
+         </div>
+      </section>
+      <section class="cs-g article-list webinar_div">
+        <a href="https://fs.hubspotusercontent00.net/hubfs/3973655/Capmo_Webinar_Planung.mp4"> <img src="https://drive.google.com/uc?id=1zdkNcrN9TNMeS71tOr7drQRdTkleX3Qk"></a>
+         <div class="webinar_text list-lead">
+           <div class="read_more"><a href="https://fs.hubspotusercontent00.net/hubfs/3973655/Capmo_Webinar_Planung.mp4">Jetzt anschauen (7 min.) <img class="arrow_right" src="https://drive.google.com/uc?id=1M3BZWKVB7BdebGpLXIpLstsRzlHbqNI9"></a></div>
+         </div>
+      </section>
+     <section class="cs-g article-list webinar_div">
+       <a href="https://fs.hubspotusercontent00.net/hubfs/3973655/Capmo_Webinar_Planung.mp4"><img src="https://drive.google.com/uc?id=1IvcG4qF607tVNiKWkw8v-eUB1rAE1etc"></a>
+         <div class="webinar_text list-lead">
+           <div class="read_more"><a href="https://fs.hubspotusercontent00.net/hubfs/3973655/Capmo_Webinar_Planung.mp4">Jetzt anschauen (5 min.) <img class="arrow_right" src="https://drive.google.com/uc?id=1M3BZWKVB7BdebGpLXIpLstsRzlHbqNI9"></a></div>
+         </div>
+      </section>
+     <section class="cs-g article-list webinar_div">
+      <a href="https://fs.hubspotusercontent00.net/hubfs/3973655/Webinar_Capmo_Abschluss.mp4"> <img src="https://drive.google.com/uc?id=1XcwWf6hzlClELVdkWVNWrVKSXl4PcpCX"></a>
+         <div class="webinar_text list-lead">
+           <div class="read_more"><a href="https://fs.hubspotusercontent00.net/hubfs/3973655/Webinar_Capmo_Abschluss.mp4 ">Jetzt anschauen (6 min.) <img class="arrow_right" src="https://drive.google.com/uc?id=1M3BZWKVB7BdebGpLXIpLstsRzlHbqNI9"></a></div>
+         </div>
+      </section>
+   </div>
+</div>
+  
+  
+</section>
+{% endif %}
+
+<!--{% if portal.has_forums %}
+<section class="sidebar content community-sidebar rounded-6 min-height-on-desktop fc-community-sidebar" id="home-community-sidebar">
+	<h2 class="heading">{% translate portal.community_forums %}</h2>
+	{% if portal.topics_count > 0 %}
+		<p class="intro">{% translate portal.showing_recent_updates %}</p>
+		<div>{{ portal | link_to_start_topic }}</div>
+		{% for category in portal.forum_categories %}
+			{% if category.forums_count > 0 %}
+				<div class="cs-s">
+					<h3 class="heading">{{ category.name | link_to: category.url }}</h3>
+					<div class="cs-g-c">
+					{% for forum in category.forums %}
+						<section class="cs-g topic-list">
+							<div class="list-lead badge-{{ forum.type_class }}">
+								{{ forum | link_to_forum_with_count }}
+							</div>
+							{{ forum | topic_list:3 }}
+						</section>
+					{% endfor %}
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+	{% else %}
+		{{ portal | filler_for_forums }}
+	{% endif %}
+</section>
+{% endif %}-->
+<script>
+  jQuery(".cs-g").click(function(){
+    var url = jQuery(this).attr("folder-url");
+    window.location.replace(url);
+  });
+  jQuery(".main").css("width","100%");
+  jQuery(".folder_heading").each(function(){
+  var folder_id = jQuery(this).attr("id");
+  var folder_name_length = jQuery("#" + folder_id).text().length;
+    if(folder_name_length < 29){
+      jQuery("#" + folder_id).css({"margin-top":"20px","margin-bottom":"60px"});
+    }
+    });
+  jQuery(".cs-g2").each(function(){
+    var folder_url = jQuery(this).attr("folder-url");
+    if(folder_url == "/support/solutions/44000814546" || folder_url == "/support/solutions/44000814547" || folder_url == "/support/solutions/44000814548" || folder_url == "/support/solutions/44000814549"){
+      jQuery(this).attr("style","display:inline-block !important");
+    }
+    if(folder_url != "/support/solutions/44000814546" && folder_url != "/support/solutions/44000814547" && folder_url != "/support/solutions/44000814548" && folder_url != "/support/solutions/44000814549"){
+      jQuery(this).remove();
+    }
+    });
+</script>

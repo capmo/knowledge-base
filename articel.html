@@ -1,0 +1,60 @@
+<div class="breadcrumb">
+  <h3 style="display: inline-block;"><a href="/support/home">Überblick</a></h3>
+      <!--<h3 style="display: inline-block; margin-right: 10px;"><a href="{{ portal.solutions_home_url }}">{{ folder.category.name | h}}</h3>-->
+      <h2 class="heading">{{ category.name | h }}</h2>
+	</div>
+<section class="main content rounded-6 min-height-on-desktop fc-folder-show" id="folder-show-{{folder.id}}">
+	
+	<p class="info-text">{{ folder.description | h}}</p>
+	{% if folder.articles_count > 0 %}
+		{% paginate folder.articles by 10 %}		
+			<section class="article-list c-list">
+				{% for article in paginate.collection %}
+					<div class="c-row c-article-row">
+						<!--<i class="icon-article-table-row"></i>-->
+						<div class="ellipsis article-title"> 
+							<a href="{{ article.url }}" class="c-link">{{ article.title | h }}</a>
+						</div>
+						<div class="description-text">
+							{{  article.body_plain | h | truncate:160 }}
+						</div>
+						<!--<div class="help-text">{{ article.modified_on | short_day_with_time }}</div>-->
+                      <div class="read_more"><a href="{{ article.url }}">Weitere Inhalte<img class="arrow_right" src="https://drive.google.com/uc?id=1M3BZWKVB7BdebGpLXIpLstsRzlHbqNI9"></a></div>
+					</div>
+				{% endfor %}
+			</section>
+			{{ paginate | default_pagination }}
+		{% endpaginate %}
+	{% else %}
+		{{ folder| h | filler_for_folders }}
+	{% endif %}
+   
+</section>
+  <section class="sidebar content rounded-6 category_related_articles fc-related-articles">
+  <div id="related_articles">
+<div class="cs-g-c">
+<section class="article-list">
+<h3 class="list-lead">{{ folder.category.name | h}}</h3>
+<ul rel="remote" id="related-article-list">	
+
+    {% for category in portal.solution_categories %}
+    {% if category.id == folder.category.id %}
+	{% for folder in category.folders %}
+			{% for article in folder.articles %}
+    <li>
+		<div class="ellipsis">
+			<a href="{{article.url}}" class="featured_article">{{article.title}}</a>
+		</div>
+	</li>
+			{% endfor %}
+    {% endfor %}
+		{% endif %}
+	
+{% endfor %}
+    </ul></section></div></div>
+  </section>
+ 
+<script>
+  jQuery("body").css("background-color","white");
+  /*jQuery(".main").css("width","100%");*/
+</script>
